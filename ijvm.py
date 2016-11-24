@@ -138,9 +138,22 @@ class IJVM:
 
 if __name__ == "__main__":
     from util import int2bits, bits2int
-    from assembler import assemble_simple
+    from assembler import assemble, assemble_simple
 
     ijvm = IJVM()
+    assembly_code = """
+                    BIPUSH 1
+
+                    IFEQ ELSE
+
+                    BIPUSH 2
+                    GOTO END
+
+                    ELSE:
+                    BIPUSH 3
+
+                    END:
+                    """
 
     sum_to_n      = """
                     # var0 = 7
